@@ -1,0 +1,18 @@
+.container {
+  margin-left: 15%;
+}
+
+.error-note {
+  color: maroon;
+}
+
+.form-title-text {
+  font-size: 1.2rem;
+  line-height: 3rem;
+  color: teal;
+}
+
+.form-group.required .control-label:after {
+  content: "*";
+  color: red;
+}

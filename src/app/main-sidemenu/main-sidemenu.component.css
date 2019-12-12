@@ -1,0 +1,23 @@
+#mySidebar {
+    width: 15%;
+    position: fixed;
+    /* margin-top: 40px; */
+}
+
+/* #main {
+    margin-left: 15%;
+} */
+
+.menu-active {
+    background-color: #ccc;
+}
+
+.w3-bar-item {
+    text-decoration: none !important;
+    font-size: 1.2rem;
+}
+
+ul li {
+    list-style-type: none;
+    border: none;
+}

@@ -1,0 +1,53 @@
+<div class="w3-sidebar w3-bar-block w3-card nav flex-column" id="mySidebar" role="tablist">
+    <!-- <button class="w3-bar-item w3-button w3-large" (click)="w3_close()">Close &times;</button> -->
+    <ul class="w3-ul">
+        <li [ngClass]="{'menu-active': (pageType == 'dashboard')}">
+            <a [routerLink]="['/dashboard']" class="w3-bar-item w3-button"><i class="fa fa-folder-o"></i> Dashboard</a>
+        </li>
+        <li [ngClass]="{'menu-active': (pageType == 'settings')}">
+            <a [routerLink]="['/settings']" class="w3-bar-item w3-button"><i class="fa fa-gear"></i> Settings</a>
+        </li>
+        <li [ngClass]="{'menu-active': (pageType == 'forms')}">
+            <a [routerLink]="['/forms']" class="w3-bar-item w3-button"><i class="fa fa-wpforms"></i> Forms</a>
+        </li>
+        <li [ngClass]="{'menu-active': (pageType == 'tables')}">
+            <a [routerLink]="['/tables']" class="w3-bar-item w3-button"><i class="fa fa-table"></i> Tables</a>
+        </li>
+        <!-- <li>
+            <a class="w3-bar-item w3-button toggle"><i class="fa fa-folder"></i> Mat Angular</a>
+            <ul class="w3-ul">
+                <li [ngClass]="{'menu-active': (pageType == 'material-forms')}">
+                    <a [routerLink]="[ '/material-forms' ]" class="w3-bar-item w3-button"><i class="fa fa-wpforms"></i>
+                        Forms</a>
+                </li>
+                <li [ngClass]="{'menu-active': (pageType == 'material-tables')}">
+                    <a [routerLink]="[ '/material-tables' ]" class="w3-bar-item w3-button"><i class="fa fa-table"></i>
+                        Tables</a>
+                </li>
+                <li [ngClass]="{'menu-active': (pageType == 'material-stepper')}">
+                    <a [routerLink]="[ '/material-stepper' ]" class="w3-bar-item w3-button"><i
+                            class="fa fa-exchange"></i>
+                        Stepper</a>
+                </li>
+            </ul>
+        </li> -->
+    </ul>
+</div>
+
+<!-- <div class="tab-content" id="main">
+    <div class="w3-teal">
+        <button id="openNav" class="w3-button w3-teal w3-xlarge" (click)="w3_open()">&#9776;</button>
+        <div class="w3-container tab-pane fade show active" id="dashboard" role="tabpanel">
+            <app-dashboard></app-dashboard>
+        </div>
+        <div class="w3-container tab-pane fade" id="settings" role="tabpanel">
+            <app-settings></app-settings>
+        </div>
+        <div class="w3-container tab-pane fade" id="forms" role="tabpanel">
+            <app-forms></app-forms>
+        </div>
+        <div class="w3-container tab-pane fade" id="tables" role="tabpanel">
+            <app-tables></app-tables>
+        </div>
+    </div>
+</div> -->

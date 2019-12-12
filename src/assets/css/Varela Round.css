@@ -1,0 +1,9 @@
+/* hebrew */
+@font-face {
+  font-family: 'Varela Round';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Varela Round Regular'), local('VarelaRound-Regular'), url('./fonts/varelaround/VarelaRound-Regular.ttf') format('ttf');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}

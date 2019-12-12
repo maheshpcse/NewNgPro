@@ -1,0 +1,25 @@
+.card {
+    width: 100%;
+    height: 70px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.fa-gear {
+    margin-right: 50px;
+}
+
+.fa-bell-o {
+    margin-right: 50px;
+}
+
+.fa-user-circle {
+    font-size: 40px;
+    margin-right: 20px;
+}
