@@ -30,16 +30,88 @@ export class FormsComponent implements OnInit {
     this.stepForm = this.fb.group({
       meritData: this.fb.array([])
     });
-    this.stepper1('');
+    this.disabled = true;
+    this.nextStep('');
+    this.previousStep('');
     this.stepFormData();
     this.apiService.getData().subscribe(res => {
       console.log("result:", res);
     });
   }
 
-  stepper1(i) {
+  prevForm: boolean = false;
+  prevForm1: boolean = false;
+  prevForm2: boolean = false;
+  nextForm: boolean = true;
+  nextForm1: boolean = false;
+  nextForm2: boolean = false;
+  saveForm: boolean = false;
+
+  username: any;
+  password: any;
+
+  nextStep(i) {
+    console.log(i);
+    this.disabled = true;
     var stepper1 = new Stepper(document.querySelector('#stepper1'));
-    stepper1.to(i);
+    if (i == 1 && this.username != null || this.password != null || this.username != '' || this.username != '') {
+      this.disabled = false;
+      stepper1.to(i);
+      this.nextForm = true;
+      this.nextForm1 = false;
+      this.prevForm = false;
+    }
+    else if (i == 2) {
+      stepper1.to(i);
+      this.nextForm = false;
+      this.nextForm1 = true;
+      this.prevForm = true;
+    }
+    else if (i == 3) {
+      stepper1.to(i);
+      this.nextForm1 = false;
+      this.prevForm = false;
+      this.nextForm2 = true;
+      this.prevForm1 = true;
+    }
+    else if (i == 4) {
+      stepper1.to(i);
+      this.saveForm = true;
+      this.prevForm2 = true;
+      this.nextForm2 = false;
+      this.prevForm1 = false;
+    }
+  }
+
+  previousStep(i) {
+    var stepper1 = new Stepper(document.querySelector('#stepper1'));
+    if (i == 1) {
+      stepper1.to(i);
+      this.nextForm = true;
+      this.nextForm1 = false;
+      this.prevForm = false;
+    }
+    else if (i == 2) {
+      stepper1.to(i);
+      this.nextForm2 = false;
+      this.prevForm1 = false;
+      this.nextForm1 = true;
+      this.prevForm = true;
+    }
+    else if (i == 3) {
+      stepper1.to(i);
+      this.saveForm = false;
+      this.prevForm2 = false;
+      this.nextForm2 = true;
+      this.prevForm1 = true;
+    }
+    else if (i == 4) {
+      stepper1.to(i);
+      this.saveForm = true;
+      this.prevForm2 = true;
+      this.nextForm2 = false;
+      this.prevForm1 = false;
+    }
   }
 
   stepFormData() {

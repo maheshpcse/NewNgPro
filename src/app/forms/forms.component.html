@@ -51,8 +51,8 @@
                                                 placeholder="Enter password here" required>
                                         </div>
                                     </div>
-                                    <button class="btn btn-outline-primary float-right" (click)="stepper1(2)">Next <i
-                                            class="fa fa-angle-right" aria-hidden="true"></i></button>
+                                    <!-- <button class="btn btn-outline-primary float-right" (click)="stepper1(2)">Next <i
+                                            class="fa fa-angle-right" aria-hidden="true"></i></button> -->
                                 </form>
                             </div>
                             <div id="test-l-2" class="content">
@@ -71,10 +71,10 @@
                                                 placeholder="Enter email here">
                                         </div>
                                     </div>
-                                    <button class="btn btn-outline-primary float-right" (click)="stepper1(3)">Next <i
+                                    <!-- <button class="btn btn-outline-primary float-right" (click)="stepper1(3)">Next <i
                                             class="fa fa-angle-right" aria-hidden="true"></i></button>
                                     <button class="btn btn-outline-primary" (click)="stepper1(1)"><i
-                                            class="fa fa-angle-left" aria-hidden="true"></i> Previous</button>
+                                            class="fa fa-angle-left" aria-hidden="true"></i> Previous</button> -->
                                 </form>
                             </div>
                             <div id="test-l-3" class="content">
@@ -97,10 +97,10 @@
                                                 placeholder="Enter contact here">
                                         </div>
                                     </div>
-                                    <button class="btn btn-outline-primary float-right" (click)="stepper1(4)">Next <i
+                                    <!-- <button class="btn btn-outline-primary float-right" (click)="stepper1(4)">Next <i
                                             class="fa fa-angle-right" aria-hidden="true"></i></button>
                                     <button class="btn btn-outline-primary" (click)="stepper1(2)"><i
-                                            class="fa fa-angle-left" aria-hidden="true"></i> Previous</button>
+                                            class="fa fa-angle-left" aria-hidden="true"></i> Previous</button> -->
                                 </form>
                             </div>
                             <div id="test-l-4" class="content">
@@ -158,16 +158,35 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-outline-primary" (click)="stepper1(3)"><i
+                                    <!-- <button class="btn btn-outline-primary" (click)="stepper1(3)"><i
                                             class="fa fa-angle-left" aria-hidden="true"></i> Previous</button>
                                     <button class="btn btn-outline-primary float-right" [disabled]="stepForm.invalid"
                                         (click)="onSaveData()"><i class="fa fa-save" aria-hidden="true"></i>
-                                        Submit</button>
+                                        Submit</button> -->
                                 </form>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
+                        <button class="btn btn-outline-primary float-right" (click)="nextStep(2)"
+                            *ngIf="nextForm" [disabled]="disabled">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+
+                        <button class="btn btn-outline-primary float-right" (click)="nextStep(3)"
+                            *ngIf="nextForm1">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                        <button class="btn btn-outline-primary" (click)="previousStep(1)" *ngIf="prevForm"><i
+                                class="fa fa-angle-left" aria-hidden="true"></i> Previous</button>
+
+                        <button class="btn btn-outline-primary float-right" (click)="nextStep(4)"
+                            *ngIf="nextForm2">Next <i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                        <button class="btn btn-outline-primary" (click)="previousStep(2)" *ngIf="prevForm1"><i
+                                class="fa fa-angle-left" aria-hidden="true"></i> Previous</button>
+
+                        <button class="btn btn-outline-primary" (click)="previousStep(3)" *ngIf="prevForm2"><i
+                                class="fa fa-angle-left" aria-hidden="true"></i> Previous</button>
+                        <button class="btn btn-outline-primary float-right" [disabled]="stepForm.invalid"
+                            (click)="onSaveData()" *ngIf="saveForm"><i class="fa fa-save"
+                                aria-hidden="true"></i>
+                            Submit</button>
                     </div>
                 </div>
             </div>
