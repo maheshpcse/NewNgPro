@@ -7,17 +7,28 @@ import { TablesComponent } from './tables/tables.component';
 import { MatFormsComponent } from './mat-forms/mat-forms.component';
 import { MatTablesComponent } from './mat-tables/mat-tables.component';
 import { MainSidemenuComponent } from './main-sidemenu/main-sidemenu.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { CommonComponent } from './common/common.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: MainSidemenuComponent
-  },
+  // {
+  //   path: '',
+  //   component: MainSidemenuComponent
+  // },
   // {
   //   path: '',
   //   redirectTo: 'dashboard',
   //   pathMatch: 'full'
+  // },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent
+  // },
+  // {
+  //   path: 'signup',
+  //   component: SignupComponent
   // },
   {
     path: 'dashboard',
@@ -46,6 +57,15 @@ const routes: Routes = [
   {
     path: 'material-stepper',
     component: MatTablesComponent
+  },
+  {
+    path: '',
+    component: CommonComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 

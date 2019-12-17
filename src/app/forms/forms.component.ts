@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormControl, FormBuilder, FormArray, FormGroup, Validators, ValidatorFn } from '@angular/forms';
-import { AppService } from '../app.service';
 import Stepper from 'bs-stepper';
+import { AuthService } from '../auth.service';
 declare var $: any;
 
 export interface Data {
@@ -24,7 +24,10 @@ export class FormsComponent implements OnInit {
   maxError: any = '';
   disabled: boolean = true;
 
-  constructor(public fb: FormBuilder, private apiService: AppService) { }
+  username: any;
+  password: any;
+
+  constructor(public fb: FormBuilder, private apiService: AuthService) { }
 
   async ngOnInit() {
     this.stepForm = this.fb.group({
@@ -47,21 +50,11 @@ export class FormsComponent implements OnInit {
   nextForm2: boolean = false;
   saveForm: boolean = false;
 
-  username: any;
-  password: any;
-
   nextStep(i) {
     console.log(i);
     this.disabled = true;
     var stepper1 = new Stepper(document.querySelector('#stepper1'));
-    if (i == 1 && this.username != null || this.password != null || this.username != '' || this.username != '') {
-      this.disabled = false;
-      stepper1.to(i);
-      this.nextForm = true;
-      this.nextForm1 = false;
-      this.prevForm = false;
-    }
-    else if (i == 2) {
+    if (i == 2) {
       stepper1.to(i);
       this.nextForm = false;
       this.nextForm1 = true;
@@ -76,10 +69,10 @@ export class FormsComponent implements OnInit {
     }
     else if (i == 4) {
       stepper1.to(i);
-      this.saveForm = true;
-      this.prevForm2 = true;
       this.nextForm2 = false;
       this.prevForm1 = false;
+      this.saveForm = true;
+      this.prevForm2 = true;
     }
   }
 
@@ -126,6 +119,14 @@ export class FormsComponent implements OnInit {
       this.addData(element)
     });
   }
+
+  // saveAsForm() {
+  //   if((this.username != '' && this.password != '') || (this.username != null && this.password != null)) {
+  //     this.disabled = false;
+  //   } else {
+  //     this.disabled = true;
+  //   }
+  // }
 
   async addData(value: any) {
     const control = this.stepForm.controls.meritData as FormArray;

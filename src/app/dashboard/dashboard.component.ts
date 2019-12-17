@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   constructor(public _sharedService: SharedService) { }
 
   ngOnInit() {
+    console.log("dashboard page is opened");
     this.courses = ['Node', 'Angular', 'Express', 'Mongodb'];
   }
 

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainSidemenuComponent } from './main-sidemenu/main-sidemenu.component';
-import { SharedService } from './shared.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FormsComponent } from './forms/forms.component';
@@ -19,7 +18,12 @@ import { MatTablesComponent } from './mat-tables/mat-tables.component';
 import { MatStepperComponent } from './mat-stepper/mat-stepper.component';
 // import { DataTableModule } from "angular-6-datatable";
 import { DataTableModule } from 'ng-angular8-datatable';
-import { AppService } from './app.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { CommonComponent } from './common/common.component';
+import { SharedService } from './shared.service';
+import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,10 @@ import { AppService } from './app.service';
     TablesComponent,
     MatFormsComponent,
     MatTablesComponent,
-    MatStepperComponent
+    MatStepperComponent,
+    LoginComponent,
+    SignupComponent,
+    CommonComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,8 @@ import { AppService } from './app.service';
   ],
   providers: [
     SharedService,
-    AppService
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
