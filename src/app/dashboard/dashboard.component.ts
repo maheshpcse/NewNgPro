@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,10 @@ export class DashboardComponent implements OnInit {
   isValid: boolean = false;
   minError: any = '';
 
-  constructor(public _sharedService: SharedService) { }
+  constructor(
+    public _sharedService: SharedService,
+    private route: Router
+    ) { }
 
   ngOnInit() {
     console.log("dashboard page is opened");
@@ -34,6 +38,13 @@ export class DashboardComponent implements OnInit {
     else {
       this.isValid = false;
     }
+  }
+
+  logOut() {
+    localStorage.removeItem('token');
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('role');
+    this.route.navigate(['']);
   }
 
 }

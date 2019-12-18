@@ -7,8 +7,8 @@ export class ApiService {
     GETDATA: environment.apiUrl + '/getdata',
 
     // LOGIN and SIGNUP API URL's
-    LOGIN: environment.apiUrl + '/geruserlogin',
-    SIGNUP: environment.apiUrl + '/getusersignup',
+    LOGIN: environment.apiUrl + '/login',
+    SIGNUP: environment.apiUrl + '/signup',
     VALID_LOGIN: environment.apiUrl + '/validuser',
     GET_USER_PROFILE: environment.apiUrl + '/getuserprofile'
   }

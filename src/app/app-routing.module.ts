@@ -10,6 +10,7 @@ import { MainSidemenuComponent } from './main-sidemenu/main-sidemenu.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CommonComponent } from './common/common.component';
+import { AuthGuardService } from './auth-guard.service';
 
 
 const routes: Routes = [
@@ -32,30 +33,37 @@ const routes: Routes = [
   // },
   {
     path: 'dashboard',
+    canActivate: [AuthGuardService],
     component: DashboardComponent
   },
   {
     path: 'settings',
+    canActivate: [AuthGuardService],
     component: SettingsComponent
   },
   {
     path: 'forms',
+    canActivate: [AuthGuardService],
     component: FormsComponent
   },
   {
     path: 'tables',
+    canActivate: [AuthGuardService],
     component: TablesComponent
   },
   {
     path: 'material-forms',
+    canActivate: [AuthGuardService],
     component: MatFormsComponent
   },
   {
     path: 'material-tables',
+    canActivate: [AuthGuardService],
     component: MatTablesComponent
   },
   {
     path: 'material-stepper',
+    canActivate: [AuthGuardService],
     component: MatTablesComponent
   },
   {

@@ -15,12 +15,12 @@ export class AuthService {
     return this.http.get(ApiService.API.GETDATA);
   }
 
-  userLogin() {
-    return this.http.get(ApiService.API.LOGIN);
+  userLogin(data) {
+    return this.http.post(ApiService.API.LOGIN, data);
   }
 
-  userSignup() {
-    return this.http.get(ApiService.API.SIGNUP);
+  userSignup(data) {
+    return this.http.post(ApiService.API.SIGNUP, data);
   }
 
   getUserToken() {
